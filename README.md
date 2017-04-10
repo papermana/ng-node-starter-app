@@ -35,8 +35,8 @@ To get base application up and running, make sure you have recent versions of [N
 ```bash
 yarn install # install all dependencies listed in package.json file
 yarn global add swagger sequelize-cli # install CLI tools necessary for development
-cp .env.development.sample .env.development
-cp .env.test.sample .env.test
+cp .env.development.example .env.development
+cp .env.test.example .env.test
 ```
 
 Now you'll need to create development, test databases and their user(s). Using default settings from sample `.env.*` files and CLI wrappers around basic PostgreSQL SQL statements ([createuser](https://www.postgresql.org/docs/current/static/app-createuser.html), [createdb](https://www.postgresql.org/docs/current/static/app-createdb.html)):
@@ -146,7 +146,7 @@ module.exports = {
 
 ### Adding custom configuration
 
-1. Add appropriate key/value pair to your `.env.*` and `.env.*.sample` files, i.e.:
+1. Add appropriate key/value pair to your `.env.*` and `.env.*.example` files, i.e.:
 ```
 SOME_SERVICE_TOKEN=123
 ```
