@@ -82,7 +82,7 @@ Following are some of the most common, practical scenarios that will probably ha
 
 ### New resource with basic CRUD endpoints
 
-1. Execute `yarn run edit` command. This will launch and open editor for Swagger definition describing your API. Assuming _Prop_ resource, you'd most likely want to describe following endpoints:
+1. Execute `yarn edit` command. This will launch and open editor for Swagger definition describing your API. Assuming _Prop_ resource, you'd most likely want to describe following endpoints:
 - `POST /props` - create a _Prop_
 - `GET /props` - fetch list of existing _Props_
 - `GET /props/:id` - fetch specific _Prop_
