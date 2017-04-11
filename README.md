@@ -33,8 +33,8 @@ Additionally, several other dependencies are installed and chosen to be universa
 To get base application up and running, make sure you have recent versions of [Node.js](https://nodejs.org/en/) and [PostgreSQL database](https://www.postgresql.org) installed locally, then execute following commands in your terminal:
 
 ```bash
-npm install # install all dependencies listed in package.json file
-npm install -g swagger sequelize-cli # install CLI tools necessary for development
+yarn install # install all dependencies listed in package.json file
+yarn global add swagger sequelize-cli # install CLI tools necessary for development
 cp .env.development.example .env.development
 cp .env.test.example .env.test
 ```
@@ -54,7 +54,7 @@ sequelize db:migrate
 NODE_ENV=test sequelize db:migrate
 ```
 
-That's it! Now you should be able to run automated application tests using `npm test` command, or start API server running locally with `npm start` (by default listening on port 10010).
+That's it! Now you should be able to run automated application tests using `yarn test` command, or start API server running locally with `yarn start` (by default listening on port 10010).
 
 ## Application structure
 
@@ -82,7 +82,7 @@ Following are some of the most common, practical scenarios that will probably ha
 
 ### New resource with basic CRUD endpoints
 
-1. Execute `npm edit` command. This will launch and open editor for Swagger definition describing your API. Assuming _Prop_ resource, you'd most likely want to describe following endpoints:
+1. Execute `yarn edit` command. This will launch and open editor for Swagger definition describing your API. Assuming _Prop_ resource, you'd most likely want to describe following endpoints:
 - `POST /props` - create a _Prop_
 - `GET /props` - fetch list of existing _Props_
 - `GET /props/:id` - fetch specific _Prop_
