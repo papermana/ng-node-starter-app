@@ -4,7 +4,7 @@ const SwaggerExpress = require('swagger-express-mw');
 const passport = require('passport');
 const app = require('express')();
 
-const loggerMiddleware = require('./middlewares/logger');
+const { loggerMiddleware, logger } = require('./middlewares/logger');
 
 const config = {
   appRoot: __dirname, // required config
@@ -18,13 +18,12 @@ SwaggerExpress.create(config, (err, swaggerExpress) => {
   // install middleware
   app.use(passport.initialize());
   swaggerExpress.register(app);
-
   app.use(loggerMiddleware());
 
   const port = process.env.PORT || 10010;
   app.listen(port);
 
-  console.log(`Listening on port ${port}`);
+  logger.info({ port }, 'Server started');
 });
 
 module.exports = app; // for testing
