@@ -1,6 +1,8 @@
 FROM node:6.10
 LABEL maintainer "nodejs@netguru.co"
 
+ENV NODE_ENV staging
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
