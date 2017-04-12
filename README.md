@@ -11,6 +11,7 @@ A boilerplate for Node.js REST API back-ends.
 - [Passport.js](http://passportjs.org/) with [Local](https://github.com/jaredhanson/passport-local) (username + password), [Bearer](https://github.com/jaredhanson/passport-http-bearer) (JSON Web Tokens) authentication strategies.
 - Configuration based on environment variables loaded from `.env.*` files.
 - Robust logging system with daily log rotation file.
+- Functional [Dockerfile](https://docs.docker.com/engine/reference/builder/) to launch application within [Docker](https://www.docker.com/) container (most likely deployment scenario).
 
 ## Technology stack
 
@@ -27,6 +28,7 @@ Additionally, several other dependencies are installed and chosen to be universa
 * [dotenv](https://github.com/motdotla/dotenv) - loading of environment variables from `.env.*` files, where environment-specific configuration options are being held.
 * [SuperTest](https://github.com/visionmedia/supertest) - request-based controller tests.
 * [should.js](https://github.com/shouldjs/should.js) - test assertion library. (Note: other assertion styles are by no means forbidden.)
+* [nodemon](https://github.com/remy/nodemon) - Node.js process manager, if any files change, nodemon will automatically restart your node application.
 
 ## Basic setup
 
