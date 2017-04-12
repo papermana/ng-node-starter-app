@@ -43,6 +43,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.12.3",
     "jwt-simple": "^0.5.1",
+    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
@@ -61,9 +62,10 @@
     "supertest": "^1.0.0"
   },
   "scripts": {
+    "debug": "nodemon --watch . --inspect app.js",
     "edit": "swagger project edit",
-    "start": "swagger project start",
     "lint": "eslint .",
+    "start": "nodemon --watch . app.js",
     "test": "npm run lint && NODE_ENV=test mocha --recursive"
   }
 }
