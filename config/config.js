@@ -1,5 +1,7 @@
 'use strict';
 
+const { logger } = require('../middlewares/logger');
+
 const dotEnvPath = `.env.${process.env.NODE_ENV || 'development'}`;
 require('dotenv').config({ path: dotEnvPath });
 
@@ -38,5 +40,6 @@ module.exports = {
     database: DB_DATABASE,
     host: DB_HOST,
     dialect: 'postgres',
+    logging: logger.info.bind(logger),
   },
 };
