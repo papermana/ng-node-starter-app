@@ -28,7 +28,7 @@ Additionally, several other dependencies are installed and chosen to be universa
 * [dotenv](https://github.com/motdotla/dotenv) - loading of environment variables from `.env.*` files, where environment-specific configuration options are being held.
 * [SuperTest](https://github.com/visionmedia/supertest) - request-based controller tests.
 * [should.js](https://github.com/shouldjs/should.js) - test assertion library. (Note: other assertion styles are by no means forbidden.)
-* [nodemon](https://github.com/remy/nodemon) - Node.js process manager, if any files change, nodemon will automatically restart your node application.
+* [PM2](https://github.com/Unitech/pm2) - PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks.
 
 ## Basic setup
 
@@ -56,7 +56,13 @@ sequelize db:migrate
 NODE_ENV=test sequelize db:migrate
 ```
 
-That's it! Now you should be able to run automated application tests using `yarn test` command, or start API server running locally with `yarn start` (by default listening on port 10010).
+That's it! Now you should be able to run automated application tests using `yarn test` command, or start API server running locally with `yarn start` (by default listening on port 10010 with debug running on port 9090).
+
+On staging/production server use `yarn start:prod` or `yarn start:prod-docker` (if you're running your app in the Docker container) to start the server. It's similar to `yarn start` but without file watching and debugging.
+
+## Using Keymetrics with PM2
+
+Since we're using PM2 to manage application process, you can use Keymetrics to monitor your app. All you have to do is visit [Keymetrics](https://app.keymetrics.io/), register free account and paste Keymetrics public and secret key in proper `.env` file.
 
 ## Application structure
 
@@ -109,7 +115,7 @@ sequelize db:migrate
 ```
 3. Create corresponding model test file, i.e. `test/models/prop.spec.js`
 4. Add custom model methods, tests for them as necessary.
-5. Created model is now available as export of `models/index.js` file: 
+5. Created model is now available as export of `models/index.js` file:
 ```javascript
 const { Prop } = require('./models');
 ```
