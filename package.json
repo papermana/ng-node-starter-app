@@ -27,7 +27,8 @@
     "Justyna Rachowicz <justyna.rachowicz@netguru.co> (https://github.com/mrowa44)",
     "Justyn Jóźwiak <justyn.jozwiak@netguru.co> (https://github.com/justynjozwiak)",
     "Adrian Zalewski <adrian.zalewski@netguru.co> (https://bardzusny.lol)",
-    "Rafał Wiliński <rafal.wilinski@netguru.co> (http://rwilinski.me)"
+    "Rafał Wiliński <rafal.wilinski@netguru.co> (http://rwilinski.me)",
+    "Kamil Ejsymont <kamil.ejsymont@netguru.co> (https://github.com/netes)"
   ],
   "license": "MIT",
   "main": "app.js",
@@ -43,12 +44,12 @@
     "dotenv": "^4.0.0",
     "express": "^4.12.3",
     "jwt-simple": "^0.5.1",
-    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
     "pg": "^6.1.2",
     "pg-hstore": "^2.3.2",
+    "pm2": "^2.4.6",
     "sequelize": "^3.29.0",
     "sequelize-cli": "^2.5.1",
     "swagger-express-mw": "^0.1.0"
@@ -62,10 +63,11 @@
     "supertest": "^1.0.0"
   },
   "scripts": {
-    "debug": "nodemon --watch . --inspect app.js",
     "edit": "swagger project edit",
     "lint": "eslint .",
-    "start": "nodemon --watch . app.js",
-    "test": "npm run lint && NODE_ENV=test mocha --recursive"
+    "start": "pm2 start pm2-dev.config.js",
+    "start:prod": "pm2 start pm2-staging.config.js",
+    "start:prod-docker": "pm2-docker pm2-staging.config.js",
+    "test": "yarn run lint && NODE_ENV=test mocha --recursive"
   }
 }

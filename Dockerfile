@@ -8,10 +8,10 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 
-RUN yarn global add swagger sequelize-cli
-RUN yarn install
+RUN yarn global add swagger sequelize-cli pm2
+RUN yarn
 RUN sequelize db:migrate
 
 EXPOSE 10010
 
-CMD ["yarn", "start"]
+CMD ["yarn", "start:prod-docker"]
