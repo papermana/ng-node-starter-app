@@ -65,9 +65,9 @@
   "scripts": {
     "edit": "swagger project edit",
     "lint": "eslint .",
-    "start": "pm2 start pm2-dev.config.js --only ng-node-starter-app",
-    "start:prod": "pm2 start pm2-staging.config.js --only ng-node-starter-app",
-    "start:prod-docker": "pm2-docker pm2-staging.config.js --only ng-node-starter-app",
+    "start": "pm2 start pm2-dev.config.js",
+    "start:prod": "pm2 start pm2-staging.config.js",
+    "start:prod-docker": "pm2-docker pm2-staging.config.js",
     "test": "yarn run lint && NODE_ENV=test mocha --recursive"
   }
 }
