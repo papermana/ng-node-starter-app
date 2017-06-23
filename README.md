@@ -32,6 +32,16 @@ Additionally, several other dependencies are installed and chosen to be universa
 
 ## Basic setup
 
+"Install" by downloading the files in the repo to your directory:
+
+```bash
+curl -#L \
+  https://github.com/netguru/ng-node-starter-app/archive/master.zip > master.zip
+unzip -q master.zip
+cp -r ng-node-starter-app-master/* .
+rm -r ng-node-starter-app-master master.zip
+```
+
 To get base application up and running, make sure you have recent versions of [Node.js](https://nodejs.org/en/) and [PostgreSQL database](https://www.postgresql.org) installed locally, then execute following commands in your terminal:
 
 ```bash
